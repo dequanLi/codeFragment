@@ -56,7 +56,7 @@ class UserController extends HomeController {
     		//token获取失败，重新授权
     		$sns->login();
     	} else {
-    		$userInfo = $sns->packData(); //获取第三方数据
+    		$userInfo = $sns->packData(); //获取封装后的第三方数据，便于统一处理
     		//注册登录    		
     		$Member = D('Member');
     		$Member->oAuthLogin($userInfo); //将第三方数据保存到数据库
